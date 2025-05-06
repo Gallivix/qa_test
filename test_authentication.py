@@ -9,24 +9,24 @@ def test_valid_login():
 
     browser.quit()
 
-    def test_wrong_password():
-        browser.open('https://school.qa.guru/cms/system/login')
-        browser.element('[name=email]').type('qagurubot@gmail.com')
-        browser.element('[name=password]').type('assdaff').press_enter()
-        browser.element('.btn-error').should(have.text('Неверный пароль'))
+def test_wrong_password():
+    browser.open('https://school.qa.guru/cms/system/login')
+    browser.element('[name=email]').type('qagurubot@gmail.com')
+    browser.element('[name=password]').type('assdaff').press_enter()
+    browser.element('.btn-error').should(have.text('Неверный пароль'))
 
-        browser.quit()
+    browser.quit()
 
-    def test_empty_password():
-        browser.open('https://school.qa.guru/cms/system/login')
-        browser.element('[name=email]').type('qagurubot@gmail.com').press_enter()
-        browser.element('.btn-error').should(have.text('Не заполнено поле Пароль'))
+def test_empty_password():
+    browser.open('https://school.qa.guru/cms/system/login')
+    browser.element('[name=email]').type('qagurubot@gmail.com').press_enter()
+    browser.element('.btn-error').should(have.text('Не заполнено поле Пароль'))
 
-        browser.quit()
+    browser.quit()
 
-    def test_empty_login():
-        browser.open('https://school.qa.guru/cms/system/login')
-        browser.element('[name=password]').type('assdaff').press_enter()
-        browser.element('.btn-error').should(have.text('Не заполнено поле E-Mail'))
+def test_empty_login():
+    browser.open('https://school.qa.guru/cms/system/login')
+    browser.element('[name=password]').type('assdaff').press_enter()
+    browser.element('.btn-error').should(have.text('Не заполнено поле E-Mail'))
 
-        browser.quit()
+    browser.quit()
